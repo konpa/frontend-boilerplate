@@ -12,7 +12,7 @@ gulp.task('copy-sass-boilerplate', function () {
     .pipe(gulp.dest(config.src + '/stylesheets/'));
 });
 
-gulp.task('clean-repo', function() {
+gulp.task('clean-repo', ['copy-html5-boilerplate', 'copy-sass-boilerplate'],function() {
   return gulp.src([
     'html5-boilerplate',
     'sass-boilerplate',
@@ -21,4 +21,4 @@ gulp.task('clean-repo', function() {
   ], {read: false}).pipe(clean());
 });
 
-gulp.task('init', ['copy-html5-boilerplate', 'copy-sass-boilerplate']);
+gulp.task('init', ['clean-repo']);
