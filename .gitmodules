@@ -1,0 +1,6 @@
+[submodule "html5-boilerplate"]
+	path = html5-boilerplate
+	url = https://github.com/h5bp/html5-boilerplate.git
+[submodule "sass-boilerplate"]
+	path = sass-boilerplate
+	url = https://github.com/HugoGiraudel/sass-boilerplate.git

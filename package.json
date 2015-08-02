@@ -1,0 +1,33 @@
+{
+  "name": "frontend-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/unpixel/tennis-ladder.git"
+  },
+  "author": "Julien Monty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/unpixel/tennis-ladder/issues"
+  },
+  "homepage": "https://gitlab.com/unpixel/tennis-ladder#README",
+  "devDependencies": {
+    "browser-sync": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-changed": "*",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "*",
+    "gulp-notify": "*",
+    "gulp-nunjucks": "*",
+    "gulp-nunjucks-render": "^0.2.1",
+    "gulp-sass": "*",
+    "gulp-watch": "*",
+    "require-dir": "*"
+  }
+}
