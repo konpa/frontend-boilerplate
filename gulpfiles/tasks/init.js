@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var del = require('del');
+var shell = require('gulp-shell');
 var config = require('../config.js');
 
 gulp.task('copy-html5-boilerplate', function () {
@@ -17,8 +18,11 @@ gulp.task('clean-repo', ['copy-html5-boilerplate', 'copy-sass-boilerplate'], fun
     'html5-boilerplate',
     'sass-boilerplate',
     '.gitmodules',
+    '.git',
     'dist/doc'
   ], cb);
 });
 
-gulp.task('init', ['clean-repo']);
+gulp.task('init', ['clean-repo'], shell.task([
+  'git init'
+]));

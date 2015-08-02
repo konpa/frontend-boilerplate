@@ -26,6 +26,7 @@
     "gulp-notify": "*",
     "gulp-nunjucks-render": "*",
     "gulp-sass": "*",
+    "gulp-shell": "*",
     "gulp-watch": "*",
     "require-dir": "*"
   }
