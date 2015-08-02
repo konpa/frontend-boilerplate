@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var clean = require('gulp-clean');
+var del = require('del');
 var config = require('../config.js');
 
 gulp.task('copy-html5-boilerplate', function () {
@@ -12,13 +12,13 @@ gulp.task('copy-sass-boilerplate', function () {
     .pipe(gulp.dest(config.src + '/stylesheets/'));
 });
 
-gulp.task('clean-repo', ['copy-html5-boilerplate', 'copy-sass-boilerplate'],function() {
-  return gulp.src([
+gulp.task('clean-repo', ['copy-html5-boilerplate', 'copy-sass-boilerplate'], function(cb) {
+  return del([
     'html5-boilerplate',
     'sass-boilerplate',
     '.gitmodules',
     'dist/doc'
-  ], {read: false}).pipe(clean());
+  ], cb);
 });
 
 gulp.task('init', ['clean-repo']);
