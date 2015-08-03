@@ -1,26 +1,24 @@
 // Load data for html render (nunjucks)
 var dest = './dist';
-var assets = './dist/public/assets';
 var src = './src';
-
-// Load data for html render (nunjucks)
-var data = require('../src/templates/data/data.json');
 
 module.exports = {
 
   // Set path variables
   dest: dest,
-  assets: assets,
   src: src,
   // Set path variables for watch task
   sassFiles: src + '/stylesheets/**/*.{scss,sass}',
   jsFiles: src + '/javascripts/**/*.js',
+  htmlFiles: src + '/templates/**/*.html',
+  dataFiles: src + '/templates/data/*.json',
 
   // Config for Browser Sync
   browserSync: {
+    server: './dist',
     notify: false,
     open: false,
-    files: ['./dist/app/views/**']
+    files: [dest + '/*.html', dest + '/js/*.js']
   },
 
   // Config for html render (nunjucks)
@@ -28,28 +26,18 @@ module.exports = {
     src: src + '/templates/pages/*.html',
     srcTemplates: src + '/templates',
     dest: dest,
-    data: data
+    dataFile: src + '/templates/data/data.json'
   },
 
   // Config for style preprocessor (sass)
   style: {
-    src: src + '/stylesheets/main.sass',
-    dest: assets + '/stylesheets'
+    src: src + '/stylesheets/main.scss',
+    dest: dest + '/css'
   },
 
   // Config for scripts (concat)
   script: {
-    src: [
-      './src/javascripts/app.js'
-    ],
-    dest: assets + '/javascripts'
-  },
-
-  // Config for copy task
-  copy: {
-    font: {
-      src: './bower_components/materialize/font/**/*',
-      dest: assets + '/font'
-    }
+    src: src + '/javascripts/*.js',
+    dest: dest + '/js'
   }
 };
